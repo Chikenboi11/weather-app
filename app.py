@@ -7,13 +7,11 @@ import os
 app = Flask(__name__)
 
 # @app.route() essentially creates another page and the function just handles whats on the page
-@app.route('/')
+@app.route("/")
 def index():
-    return("Hello World!")
-
-@app.route('/<name>')
-def home(name):
-    return(f"Hello {name}, nice to have you on this site!")
+    # Returns the html code on the index.html file
+    print("route called successfully!")
+    return render_template("index.html")
 
 Base_URL = "https://api.openweathermap.org/data/2.5/weather?"
 
